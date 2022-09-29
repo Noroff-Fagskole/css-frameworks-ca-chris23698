@@ -61,15 +61,36 @@
               class="login-form text-center max-w-xs flex flex-col justify-center m-auto"
             >
               <input
+                id="email"
                 class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white"
                 placeholder="Email"
                 type="text"
               />
+              <p
+                id="mail-error"
+                class="text-lg text-gray-50 hidden"
+              >
+                must contain email
+              </p>
+              <p
+                id="email-valitation"
+                class="text-lg text-gray-50 hidden"
+              >
+                email is not valid
+              </p>
               <input
+                id="password-input"
                 class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white"
                 placeholder="Password"
                 type="text"
               />
+              <p
+                id="password-error"
+                class="text-lg text-gray-50 hidden"
+              >
+                Password is required, and must
+                contain 6 characters
+              </p>
               <a href="">
                 <button
                   id="loginButton-1"
@@ -84,74 +105,91 @@
           <hr
             class="border-gray-200 my-auto dark:border-gray-700 mx-8"
           />
-          <div
-            class="signup-container p-4"
-          >
-            <h1 class="text-4xl text-center p-3 text-white">
+          <div class="signup-container p-4">
+            <h1
+              class="text-4xl text-center p-3 text-white"
+            >
               SIGN UP
             </h1>
-           <form action="" id="signup-form" class="signup-form text-center max-w-xs flex flex-col justify-center m-auto">
-            <input
-            id="first-name"
-            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-            placeholder="First name"
-            type="text"
-          />
-          <span
-                    id="first-name-error"
-                    class="hidden text-sm text-red-500">
-                Please enter your first name</span>
-            <input
-            id="email"
-            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-            placeholder="Email"
-            type="text"
-          />
-          <span
-           id="email-not-valid"
-           class="hidden text-sm text-red-500">
-            Email is not valid must be a valid stud.noroff.no or noroff.no email address
-          </span>
-          <span
-            id="email-error"
-            class="hidden text-sm text-red-500">
-             Email is required
-           </span>
-          <input
-            id="password"
-            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-            placeholder="Password"
-            type="text"
-          />
-          <span
-            id="password-error"
-            class="hidden text-sm text-red-500">
-             Password must be over 6 characters
-          </span>
-          <input
-            id="confirm-password"
-            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-            placeholder="Confirm Password"
-            type="text"
-          />
-          <span
-            id="confirm-password-matching"
-            class="hidden text-sm text-red-500">
-             Passwords doesn't match
-          </span>
-          <span
-            id="confirm-password-error"
-            class="hidden text-sm text-red-500">
-             Password must be over 6 characters
-          </span>
-          <a href="./homepage.html"
-            ><button
-              class="w-36 h-8 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
+            <form
+              action=""
+              id="signup-form"
+              class="signup-form text-center max-w-xs flex flex-col justify-center m-auto"
             >
-              SIGN IN
-            </button></a>
-           </form>
-           <p id="general-error-message" class="capitalize text-3xl text-yellow-500"></p>
+              <input
+                id="first-name"
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="First name"
+                type="text"
+              />
+              <span
+                id="first-name-error"
+                class="hidden text-sm text-red-500"
+              >
+                Please enter your first name</span
+              >
+              <input
+                id="email"
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="Email"
+                type="text"
+              />
+              <span
+                id="email-not-valid"
+                class="hidden text-sm text-red-500"
+              >
+                Email is not valid must be a valid
+                stud.noroff.no or noroff.no email
+                address
+              </span>
+              <span
+                id="email-error"
+                class="hidden text-sm text-red-500"
+              >
+                Email is required
+              </span>
+              <input
+                id="password"
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="Password"
+                type="text"
+              />
+              <span
+                id="password-error"
+                class="hidden text-sm text-red-500"
+              >
+                Password must be over 6 characters
+              </span>
+              <input
+                id="confirm-password"
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="Confirm Password"
+                type="text"
+              />
+              <span
+                id="confirm-password-matching"
+                class="hidden text-sm text-red-500"
+              >
+                Passwords doesn't match
+              </span>
+              <span
+                id="confirm-password-error"
+                class="hidden text-sm text-red-500"
+              >
+                Password must be over 6 characters
+              </span>
+              <a href="./homepage.html"
+                ><button
+                  class="w-36 h-8 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
+                >
+                  SIGN IN
+                </button></a
+              >
+            </form>
+            <p
+              id="general-error-message"
+              class="capitalize text-3xl text-yellow-500"
+            ></p>
           </div>
         </div>
       </div>
