@@ -61,15 +61,36 @@
               class="login-form text-center max-w-xs flex flex-col justify-center m-auto"
             >
               <input
+                id="email"
                 class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white"
                 placeholder="Email"
                 type="text"
               />
+              <p
+                id="mail-error"
+                class="text-lg text-gray-50 hidden"
+              >
+                must contain email
+              </p>
+              <p
+                id="email-valitation"
+                class="text-lg text-gray-50 hidden"
+              >
+                email is not valid
+              </p>
               <input
+                id="password-input"
                 class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white"
                 placeholder="Password"
                 type="text"
               />
+              <p
+                id="password-error"
+                class="text-lg text-gray-50 hidden"
+              >
+                Password is required, and must
+                contain 6 characters
+              </p>
               <a href="">
                 <button
                   id="loginButton-1"
@@ -84,12 +105,13 @@
           <hr
             class="border-gray-200 my-auto dark:border-gray-700 mx-8"
           />
-          <div
-            class="signup-container p-4"
-          >
-            <h1 class="text-4xl text-center p-3 text-white">
+          <div class="signup-container p-4">
+            <h1
+              class="text-4xl text-center p-3 text-white"
+            >
               SIGN UP
             </h1>
+<<<<<<< Updated upstream
            <form action="" id="signup-form" class="signup-form text-center max-w-xs flex flex-col justify-center m-auto">
             <input
             id="first-name"
@@ -152,6 +174,35 @@
             </button></a>
            </form>
            <p id="general-error-message" class="capitalize text-3xl text-yellow-500"></p>
+=======
+            <form
+              action=""
+              class="signup-form text-center max-w-xs flex flex-col justify-center m-auto"
+            >
+              <input
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="Email"
+                type="text"
+              />
+              <input
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="Password"
+                type="text"
+              />
+              <input
+                class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+                placeholder="Confirm Password"
+                type="text"
+              />
+              <a href="./homepage.html"
+                ><button
+                  class="w-36 h-8 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
+                >
+                  SIGN IN
+                </button></a
+              >
+            </form>
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
