@@ -84,85 +84,34 @@
             class="border-gray-200 my-auto dark:border-gray-700 mx-8"
           />
           <div
-            class="signup-container text-center text-white p-4 max-w-xs flex flex-col justify-center m-auto"
+            class="signup-container p-4"
           >
-            <h1 class="text-4xl text-center p-3">
+            <h1 class="text-4xl text-center p-3 text-white">
               SIGN UP
             </h1>
-            <button
-              class="w-72 h-10 bg-main-text rounded text-xl mt-5 mb-5 hover:bg-hover-btn duration-500"
-              id="modal"
+           <form action="" class="signup-form text-center max-w-xs flex flex-col justify-center m-auto">
+            <input
+            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+            placeholder="Email"
+            type="text"
+          />
+          <input
+            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+            placeholder="Password"
+            type="text"
+          />
+          <input
+            class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+            placeholder="Confirm Password"
+            type="text"
+          />
+          <a href="./homepage.html"
+            ><button
+              class="w-36 h-8 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
             >
-              CREATE ACCOUNT
-            </button>
-            <div
-              class="b bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-center"
-              id="overlay"
-            >
-              <div class="bg-grey-200 rounded">
-                <div
-                  class="bg-secondary p-10 mx-4 rounded max-w-md flex flex-col justify-center m-auto"
-                >
-                  <h1 class="mb-3">
-                    CREATE ACCOUNT
-                  </h1>
-                  <input
-                    class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-                    placeholder="Email"
-                    type="text"
-                  />
-                  <input
-                    class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-                    placeholder="Password"
-                    type="text"
-                  />
-                  <input
-                    class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-                    placeholder="Confirm Password"
-                    type="text"
-                  />
-                  <a href="./homepage.html"
-                    ><button
-                      class="w-36 h-8 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
-                    >
-                      SIGN IN
-                    </button></a
-                  >
-                </div>
-              </div>
-            </div>
-            <h2>With</h2>
-            <div
-              class="social-container text-center m-0"
-            >
-              <button
-                class="gmail w-72 bg-input-color rounded text-xl my-2 p-2 hover:bg-hover-btn duration-500"
-              >
-                <img
-                  class="m-auto"
-                  src="./img/gmail.png"
-                  alt=""
-                />
-              </button>
-              <button
-                class="facebook w-72 bg-input-color rounded text-xl my-2 p-2 hover:bg-hover-btn duration-500"
-              >
-                <img
-                  class="m-auto"
-                  src="./img/facebook (2).png"
-                  alt=""
-                />
-              </button>
-              <button
-                class="linkedin w-72 bg-input-color rounded text-xl my-2 p-2 hover:bg-hover-btn duration-500"
-              >
-                <img
-                  class="m-auto"
-                  src="./img/linkedin.png"
-                  alt=""
-                />
-              </button>
-            </div>
+              SIGN IN
+            </button></a>
+           </form>
           </div>
         </div>
       </div>
