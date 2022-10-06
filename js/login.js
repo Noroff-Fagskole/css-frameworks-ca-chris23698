@@ -24,11 +24,13 @@ console.log(passwordPlace);
 const passwordError = document.getElementById("password-error")
 console.log(passwordError);
 
+const generalErrorMessage = document.querySelector("#general-error-message");
+
 
 if (inlogForm) {
 inlogForm.onsubmit = function(event){
 event.preventDefault();
-    console.log("button pressed");
+
 
 var ifEmail = false;
 if (emailPlace.value.trim().length > 0){
@@ -39,19 +41,8 @@ if (emailPlace.value.trim().length > 0){
 else {
     emailError.classList.remove("hidden")
 }
-}
-/*
-var ifEmailValid = false;
-if (emailPlace.value.trim().length && validateEmail(emailPlace.value) === true) {
-mailValitation.classList.add("hidden")
-ifEmailValid=true;
-}
-else if(emailPlace.value.trim().length && validateEmail(emailPlace.value) !== true) {
-//else if (validateEmail(emailPlace.value !== true)){
-mailValitation.classList.remove("hidden")
 
-}
-*/
+
 let ifEmailValid = false;
 
     if (emailPlace.value.trim().length && validateEmail(emailPlace.value) === true) {
@@ -67,6 +58,56 @@ let ifEmailValid = false;
     }
 
 
-
+let ifPassword = false;
+if (passwordPlace.value.trim().length >=6) {
+    passwordError.classList.add("hidden");
+    ifPassword = true;
+} else {
+    passwordError.classList.remove("hidden");
 }
+let ifValidForm = ifEmail && ifEmailValid && ifPassword;
 
+if (ifValidForm) {
+    console.log("The Validation Was A Success")
+    const validationData = {
+        "email": emailPlace.value,
+        "password": passwordPlace.value
+    }
+
+
+
+const LOGIN_ENDPOINT = `${USER_LOGIN_URL}`;
+
+(async function logInTheUser() {
+    const response = await fetch(LOGIN_ENDPOINT,{
+        method: "POST",
+        headers:{ "Content-Type": "application/json"},
+        body: JSON.stringify(validationData)
+});
+if (response.ok) {
+    const data = await response.json();
+    console.log(data);
+    console.log(data.accessToken)
+    saveToken(data.accessToken);
+    const saveTheUser = {
+        name: data.name,
+        email: data.email
+    }
+    console.log(saveTheUser);
+    saveUser(saveTheUser);
+    console.log("Login Success")
+    location.href = "/homepage.html"
+}
+else {
+    const tokenValidErr = await response.json();
+         const tokenValidErrMessage = `A Validation Error Happened: ${tokenValidErr.message}`;
+               console.log("Login failed");
+               
+       throw new Error(tokenValidErrMessage);
+}})().catch(tokenValidErr =>{
+    generalErrorMessage.innerHTML = `Sorry !! ${tokenValidErr.message}`
+});
+}else {
+    console.log("User Not Found");
+}
+}};
