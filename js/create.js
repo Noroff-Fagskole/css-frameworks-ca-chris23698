@@ -11,7 +11,7 @@ const message = document.querySelector("#post-message");
 
 const mError = document.querySelector("#message-error");
 
-const URL = CREATE_POST_URL;
+//const URL = CREATE_POST_URL;
 
 createForm.addEventListener("submit", function(event) {
 event.preventDefault();
@@ -44,21 +44,21 @@ if(formValid){
     console.log(message.value)
     const createdData = {
         "title": title.value,
-        "message": message.value
+        "body": message.value
     }
     console.log(createdData);
     const token = getToken();
     console.log(token);
-   
+   console.log(CREATE_POST_URL);
 
     (async function makeAPost() {
-        const response = await fetch(URL, {
+        const response = await fetch(CREATE_POST_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
     },
-    body: JSON.stringify("what", createdData)
+    body: JSON.stringify(createdData)
 })
 console.log(response)
 if(response.ok) {
