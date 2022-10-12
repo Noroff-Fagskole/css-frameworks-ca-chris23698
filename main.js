@@ -1,7 +1,7 @@
 import './style.css';
 import createHeaderBar from "./js/headers/header.js";
 import {getUserName} from "./js/utils/storage.js";
-import {clearStorage} from "./js/utils/storage"
+import {clearStorage} from "./js/utils/storage";
 createHeaderBar();
 const userName = getUserName();
 const welcome = document.querySelector("#welcome-name");

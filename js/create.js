@@ -11,6 +11,8 @@ const message = document.querySelector("#post-message");
 
 const mError = document.querySelector("#message-error");
 
+const media = document.querySelector("#media-post");
+
 const URL = CREATE_POST_URL;
 
 createForm.addEventListener("submit", function(event) {
@@ -37,6 +39,7 @@ else {
     console.log("Message Is Not Valid")
 }
 
+
 let formValid = messageValid && titleValid;
 
 if(formValid){
@@ -44,12 +47,14 @@ if(formValid){
     console.log(message.value)
     const createdData = {
         "title": title.value,
-        "body": message.value
+        "body": message.value,
+      //  "media": media.value
     }
     console.log(createdData);
     const token = getToken();
     console.log(token);
    console.log(URL);
+
 
     (async function makeAPost() {
         const response = await fetch(URL, {
@@ -78,11 +83,4 @@ createForm.reset();
 else {
     console.log("Form Is Not Valid")
 }
-
-
-
-
-
-
-
 })
