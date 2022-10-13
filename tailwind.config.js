@@ -1,5 +1,8 @@
 module.exports = {
-  content: ["./*.{html,js}"],
+  content: [
+    "./*.{html,js}",
+    "./js/*.js" //TODO if you have class in any of the js files under js folder
+  ],
   theme: {
     extend: {
       colors: {
@@ -13,6 +16,5 @@ module.exports = {
         "hover-btn": "#4E0034"
       }
     },
-  },
-  plugins: [],
+  }
 }
