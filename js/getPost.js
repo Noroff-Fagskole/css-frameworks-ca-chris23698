@@ -49,7 +49,7 @@ else {
         if (theAvatar === ""){
             if (postMedia === ""){
                 return (`
-                <a href="/singlePost.html?post_id"${post.id}   <li class="" style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"   <li class="" style="margin-top:20px">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
@@ -81,7 +81,7 @@ else {
                 )
                } else {
                 return (`
-                <a href="/singlePost.html?post_id"${post.id}        <li class=" "  style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"        <li class=" "  style="margin-top:20px">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
@@ -119,7 +119,7 @@ else {
         else {
             if (postMedia === ""){
                 return (`
-                <a href="/singlePost.html?post_id" ${post.id}              <li class="" style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"              <li class="" style="margin-top:20px">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
@@ -151,7 +151,7 @@ else {
                 )
     } else {
                 return (`
-                <a href="/singlePost.html?post_id"  ${post.id}             <li class=" "  style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"             <li class=" "  style="margin-top:20px">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"

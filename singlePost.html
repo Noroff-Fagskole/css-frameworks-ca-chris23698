@@ -31,23 +31,45 @@
     </header>
 
     <main>
-      <div id="welcome-name"></div>
+      <div class="hidden" id="welcome-name"></div>
       <div
         id="main-header"
-        class="post-form flex flex-col items-center m-auto p-5 mt-24"
+        class="post-form hidden items-center m-auto p-5 mt-24"
       ></div>
       <div
         class="style-the-content border-white rounded max-w-screen-sm m-auto"
       >
-        <ul
-          id="get-posts"
-          class="get-post divide-y divide-gray-200"
-        ></ul>
+        <div
+          id="single-post"
+          class="single-container mt-24"
+        ></div>
+
+        <div
+          class="comments-and-owners divide-y divide-gray-200"
+        >
+          <div
+            class="comments-and-likes flex flew-row justify-between"
+          >
+            <h1 class="text-white">Comments</h1>
+            <button
+              id="post-likes"
+              class="likes text-white mr-10"
+            ></button>
+          </div>
+          <div
+            class="comment-style p-8 mt-2 flex flex-col justify-between"
+          >
+            <div
+              id="post-owner"
+              class="post-owner text-white"
+            ></div>
+            <div
+              id="post-comments"
+              class="single-post-comments text-red-200"
+            ></div>
+          </div>
+        </div>
       </div>
-      <div
-        id="post-errors"
-        class="post-error"
-      ></div>
     </main>
     <footer
       class="p-4 bg-secondary shadow md:px-6 md:py-8 dark:bg-gray-900"
@@ -149,7 +171,7 @@
     </script>
     <script
       type="module"
-      src="./js/getPost.js"
+      src="./js/getPostById.js"
       defer
     ></script>
   </body>
