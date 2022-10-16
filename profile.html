@@ -89,7 +89,7 @@
             <div
               class="followers-count font-bold md:text-2xl"
             >
-              <span>1800</span>
+              <span>0</span>
             </div>
             <div class="followers font-light">
               <span>Followers</span>
@@ -106,7 +106,7 @@
             <div
               class="following-count font-bold md:text-2xl"
             >
-              <span>38</span>
+              <span>0</span>
             </div>
             <div class="following font-light">
               <span>Following</span>
@@ -121,7 +121,7 @@
           </div>
         </div>
         <div class="personal-info">
-          <div class="name font-bold">
+          <div id="profile-name" class="name font-bold">
             Thomas Kilen
           </div>
           <div
@@ -301,163 +301,16 @@
           </button>
         </div>
       </div>
-      <div
-        class="posts p-5 md:max-w-xl flex flex-col items-center text-white m-auto"
-      >
-        <div class="post mb-10">
-          <div
-            class="peronsal-info flex text-center items-center"
-          >
-            <div class="profile-picture p-2">
-              <img
-                class="rounded-full w-10 h-10"
-                src="./img/pexels-thyrone-paas-1722198.jpg"
-                alt=""
-              />
-            </div>
-            <div class="name">
-              <span class="text-lg text-bold"
-                >Thomas Kilen</span
-              >
-            </div>
-          </div>
-          <div class="post-info md:max-w-md p-6">
-            <div class="post-text mb-4">
-              <span class="text-md text-light"
-                >Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-                Adipiscing quam tristique posuere
-                commodo faucibus porttitor feugiat
-                enim est. Sit purus vel nascetur
-                ut. Ornare suspendisse at diam,
-                facilisis cras justo, et
-                libero.</span
-              >
-            </div>
-            <div class="post-img">
-              <img
-                src="./img/google.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="like-btn pr-6">
-            <button
-              class="flex items-center h-6 w-14 ml-auto text-sm md:text-sm md:w-20 md:h-6 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
-            >
-              <img
-                class="ml-auto mr-2"
-                src="./img/like.png"
-                alt=""
-              />
-              <div class="like-count mr-auto">
-                896
-              </div>
-            </button>
-          </div>
+      <div class="flex flex-col gap-y-4 justify-start items-center p-8 h-screen posts">
+        <div class="container py-6 mx-auto">
+            <ul
+                    id="post-container"
+                    role="list"
+                    class="divide-y divide-gray-200"
+            ></ul>
         </div>
-        <div class="post mb-10">
-          <div
-            class="peronsal-info flex text-center items-center"
-          >
-            <div class="profile-picture p-2">
-              <img
-                class="rounded-full w-10 h-10"
-                src="./img/pexels-thyrone-paas-1722198.jpg"
-                alt=""
-              />
-            </div>
-            <div class="name">
-              <span class="text-lg text-bold"
-                >Thomas Kilen</span
-              >
-            </div>
-          </div>
-          <div class="post-info md:max-w-md p-6">
-            <div class="post-text mb-4">
-              <span class="text-md text-light"
-                >Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-                Adipiscing quam tristique posuere
-                commodo faucibus porttitor feugiat
-                enim est. Sit purus vel nascetur
-                ut. Ornare suspendisse at diam,
-                facilisis cras justo, et
-                libero.</span
-              >
-            </div>
-            <div class="post-img">
-              <img
-                src="./img/code-text.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="like-btn pr-6">
-            <button
-              class="flex items-center h-6 w-14 ml-auto text-sm md:text-sm md:w-20 md:h-6 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
-            >
-              <img
-                class="ml-auto mr-2"
-                src="./img/like.png"
-                alt=""
-              />
-              <div class="like-count mr-auto">
-                896
-              </div>
-            </button>
-          </div>
-        </div>
-        <div class="post mb-10">
-          <div
-            class="peronsal-info flex text-center items-center"
-          >
-            <div class="profile-picture p-2">
-              <img
-                class="rounded-full w-10 h-10"
-                src="./img/pexels-thyrone-paas-1722198.jpg"
-                alt=""
-              />
-            </div>
-            <div class="name">
-              <span class="text-lg text-bold"
-                >Thomas Kilen</span
-              >
-            </div>
-          </div>
-          <div class="post-info md:max-w-md p-6">
-            <div class="post-text mb-4">
-              <span class="text-md text-light"
-                >Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-                Adipiscing quam tristique posuere
-                commodo faucibus porttitor feugiat
-                enim est. Sit purus vel nascetur
-                ut. Ornare suspendisse at diam,
-                facilisis cras justo, et
-                libero.</span
-              >
-            </div>
-            <div class="post-img">
-              <img src="./img/code.png" alt="" />
-            </div>
-          </div>
-          <div class="like-btn pr-6">
-            <button
-              class="flex items-center h-6 w-14 ml-auto text-sm md:text-sm md:w-20 md:h-6 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500"
-            >
-              <img
-                class="ml-auto mr-2"
-                src="./img/like.png"
-                alt=""
-              />
-              <div class="like-count mr-auto">
-                896
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
+        <div class="post-notification text-3xl text-yellow-500 capitalize"></div>
+    </div>
     </main>
     <footer
       class="p-4 bg-secondary shadow md:px-6 md:py-8 dark:bg-gray-900"
@@ -519,7 +372,8 @@
       src="./js/profile.js"
       defer
     ></script>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/main.js" defer></script>
+    <script type="module" src="./js/userPost.js" defer></script>
     <script>
       function Menu(e) {
         let list = document.querySelector('ul');

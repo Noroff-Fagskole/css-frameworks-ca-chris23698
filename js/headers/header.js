@@ -28,6 +28,16 @@ function createHeaderBar() {
                  <ion-icon name="menu" onclick="Menu(this)"></ion-icon>       
                </span>
               </div>
+              <div class="search-wrapper w-max flex flex-col gap-0.5">
+              <input type="search" id="search" placeholder="search user" class="p-2 w-max rounded-md bg-primary text-white border-stone-500" user-search>
+              </div>
+              <div class="user-cards auto-cols-auto flex gap-x-1 mt-4" user-card-container></div>
+              <template user-template>
+              <div class="card p-2 rounded-sm bg-secondary text-white">
+              <div class="header" user-header></div>
+              <div class="body" user-body></div>
+              </div>
+              </template>
               <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-secondary w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
               <li class=" text-white bg-transparent p-4 rounded s" ><button id="profile-btn">${userName}</button></li>
                  <li class=" text-white bg-main-text p-2 rounded hover:bg-hover-btn duration-500" ><button id="logout-btn">SIGN OUT</button></li>
