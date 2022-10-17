@@ -31,18 +31,21 @@ if (createBtn) {
   })
 }
 
+const menuBtn = document.querySelector("#menu-btn");
 
-function Menu(e) {
+function Menu(menuBtn) {
+  console.log("here")
   let list = document.querySelector('ul');
-  e.name === 'menu'
-    ? ((e.name = 'close'),
+  menuBtn.name === 'menu'
+    ? ((menuBtn.name = 'close'),
       list.classList.add('top-[80px]'),
       list.classList.add('opacity-100'))
-    : ((e.name = 'menu'),
+    : ((menuBtn.name = 'menu'),
       list.classList.remove('top-[80px]'),
       list.classList.remove('opacity-100'));
 }
 
+menuBtn.addEventListener("click", Menu);
 
 window.addEventListener(
   'DOMContentLoaded',
@@ -51,14 +54,15 @@ window.addEventListener(
       document.querySelector('#overlay');
     const openModal =
       document.querySelector('#modal');
-
-    openModal.addEventListener(
-      'click',
-      () => {
-        overlay.classList.remove('hidden');
-        overlay.classList.add('flex');
-      },
-    );
+      if(openModal) {
+        openModal.addEventListener(
+          'click',
+          () => {
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+          },
+      );
+      }
   },
 );
 

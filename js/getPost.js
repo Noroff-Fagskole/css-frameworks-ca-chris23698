@@ -40,7 +40,7 @@ else {
         if (theAvatar === ""){
             if (postMedia === ""){
                 return (`
-                <a href="/singlePost.html?post_id=${post.id}"   <li class="" style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"   <li class="mt-20 p-28">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
@@ -72,7 +72,7 @@ else {
                 )
                } else {
                 return (`
-                <a href="/singlePost.html?post_id=${post.id}"        <li class=" "  style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"        <li class="mt-20 p-28">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
@@ -96,7 +96,7 @@ else {
                 <h1 class="text-main-text   text-center">${postMessage}</h1>
                 
                 <img
-                        class=" justify-center m-auto items-center  h-40 w-80 pt-4"
+                        class=" justify-center m-auto items-center text-white h-40 w-80 pt-4"
                         src="${postMedia}"
                         alt="media"
                       />
@@ -110,7 +110,7 @@ else {
         else {
             if (postMedia === ""){
                 return (`
-                <a href="/singlePost.html?post_id=${post.id}"              <li class="" style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"              <li class="mt-20 p-28">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
@@ -142,14 +142,14 @@ else {
                 )
     } else {
                 return (`
-                <a href="/singlePost.html?post_id=${post.id}"             <li class=" "  style="margin-top:20px">
+                <a href="/singlePost.html?post_id=${post.id}"             <li class="mt-20 p-2">
                 <div class="post mb-10">
                   <div
                     class="peronsal-info flex text-center items-center"
                   >
                     <div class="profile-picture p-2">
                       <img
-                        class="rounded-full w-10 h-10"
+                        class="rounded-full  w-10 h-10"
                         src="${theAvatar}"
                         alt=""
                       />
@@ -166,7 +166,7 @@ else {
                 <h1 class="text-main-text text-center">${postMessage}</h1>
                 
                 <img
-                        class=" justify-center m-auto items-center  h-40 w-80 pt-4"
+                        class=" justify-center m-auto items-center text-white h-40 w-80 pt-4"
                         src="${postMedia}"
                         alt="media"
                       />

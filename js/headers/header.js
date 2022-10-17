@@ -20,7 +20,7 @@ function createHeaderBar() {
               <div class="flex justify-between items-center">
             <a href="homepage.html">   <button class="text-4xl text-main-text cursor-pointer">NERDS</button></a>
                <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white">
-                 <ion-icon name="menu" onclick="Menu(this)"></ion-icon>       
+               <ion-icon name="menu" id="menu-btn"></ion-icon>      
                </span>
               </div>
               <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-secondary w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
