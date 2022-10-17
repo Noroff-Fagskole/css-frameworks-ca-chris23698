@@ -11,6 +11,7 @@
   <script src="./js/signup.js" defer></script>
   <script type="module" src="./main.js" defer></script>
   <script type="module" src="./js/login.js" defer></script>
+  <script type="module" src="./js/signup.js" defer></script>
 </head>
 <body class="bg-primary">
   <header></header>
@@ -31,7 +32,7 @@
               email is not valid
             </p>
             <input id="password-input" class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white"
-              placeholder="Password" type="text" />
+              placeholder="Password" type="password" />
             <p id="password-error" class="text-lg text-gray-50 hidden">
               Password is required, and must
               contain 6 characters
@@ -65,12 +66,12 @@
               Email is required
             </span>
             <input id="password" class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white" placeholder="Password"
-              type="text" />
+              type="password" />
             <span id="password-error" class="hidden text-sm text-red-500">
               Password must be over 6 characters
             </span>
             <input id="confirm-password" class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
-              placeholder="Confirm Password" type="text" />
+              placeholder="Confirm Password" type="password" />
             <span id="confirm-password-matching" class="hidden text-sm text-red-500">
               Passwords doesn't match
             </span>
