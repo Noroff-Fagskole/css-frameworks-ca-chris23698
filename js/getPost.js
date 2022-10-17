@@ -4,15 +4,12 @@ import {GET_POSTS_URL} from "./settings/api";
 import {getToken} from "./utils/storage";
 
 const getPost = document.querySelector("#get-posts");
-console.log(getPost);
 
 const postError = document.querySelector("#post-errors")
-console.log(postError);
 
 const token = getToken();
 const getURL = GET_POSTS_URL ;
-console.log(token);
-console.log(getURL);
+
 if (!token){
     location.href = "/index.html"
 }
@@ -24,21 +21,15 @@ const response = await fetch("https://nf-api.onrender.com/api/v1/social/posts?_a
     "Authorization": `Bearer ${token}`
 }
 })
-console.log(response);
 if (response.ok) {
     const getPosts = await response.json();
     let time = moment(new Date()); 
-
-
-console.log(getPosts);
 if (!getPosts.length) {
     postError.innerHTML = `SORRY NO POSTS`
 }
 else {
     const postLists = getPosts.map((post) => {
-        console.log(post);
         const author= "https://nf-api.onrender.com/api/v1/social/posts/?_author=true"
-        console.log(author);
         const titleOfPosts = post.title;
         const postMessage = post.body;
         const whenPostCreated = post.created;
@@ -70,7 +61,7 @@ else {
                 <div class="post-content border-white rounded flex flex-col items-center">
                 <div class="content-style w-full ">
                 <h1 class="text-white  text-center">${titleOfPosts}</h1>
-                <p class="text-red-200  text-center">${postMessage}</p>
+                <p class="text-main-text  text-center">${postMessage}</p>
                 <time datetime="2021-01-27T16:35" class="flex mr-10 text-white ">${postCreation} minutes ago
                                 </time>
                 </div>
@@ -102,7 +93,7 @@ else {
                 <div class="post-content flex flex-col items-center">
                 <div class="content-style  w-full ">
                 <h1 class="text-white text-center">${titleOfPosts}</h1>
-                <h1 class="text-red-200 text-center">${postMessage}</h1>
+                <h1 class="text-main-text   text-center">${postMessage}</h1>
                 
                 <img
                         class=" justify-center m-auto items-center  h-40 w-80 pt-4"
@@ -140,7 +131,7 @@ else {
                 <div class="post-content border-white rounded flex flex-col items-center">
                 <div class="content-style w-full ">
                 <h1 class="text-white  text-center">${titleOfPosts}</h1>
-                <p class="text-red-200  text-center">${postMessage}</p>
+                <p class="text-main-text    text-center">${postMessage}</p>
                 <time datetime="2021-01-27T16:35" class="flex mr-10 text-white ">${postCreation} minutes ago
                                 </time>
                 </div>
@@ -172,7 +163,7 @@ else {
                 <div class="post-content flex flex-col items-center">
                 <div class="content-style  w-full ">
                 <h1 class="text-white text-center">${titleOfPosts}</h1>
-                <h1 class="text-red-200 text-center">${postMessage}</h1>
+                <h1 class="text-main-text text-center">${postMessage}</h1>
                 
                 <img
                         class=" justify-center m-auto items-center  h-40 w-80 pt-4"
@@ -198,8 +189,6 @@ else {
     await Promise.reject(new Error("Getting Post Failed"))
 }
 })().catch(generalError => {
-console.log("Could Not Get Posts");
-console.log(generalError);
 postError.innerHTML = generalError
 });
 

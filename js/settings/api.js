@@ -1,11 +1,10 @@
 import  {getUserName} from "../utils/storage";
 const API_BASE_URL = "https://nf-api.onrender.com/"
 const userName = getUserName();
-// AUTH
+
 const USER_LOGIN_URL = API_BASE_URL + "api/v1/social/auth/login"
 const USER_SIGNUP_URL = API_BASE_URL + "api/v1/social/auth/register"
 
-//POSTS
 const CREATE_POST_URL = API_BASE_URL + "api/v1/social/posts"
 const GET_POSTS_URL = API_BASE_URL + "api/v1/social/posts"
 const GET_POST_BY_ID_URL = API_BASE_URL + "api/v1/social/posts"

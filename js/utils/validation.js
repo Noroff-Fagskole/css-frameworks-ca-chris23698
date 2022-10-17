@@ -4,8 +4,6 @@ function validateEmail(email) {
 }
 
 function validatePassword(password, confirmPassword) {
-    console.log(password)
-    console.log(confirmPassword)
     if (!password) {
         return false;
     }

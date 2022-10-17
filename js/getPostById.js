@@ -8,10 +8,6 @@ const postId = searchTheParameter.get("post_id");
 const token = getToken();
 const singlePost = document.querySelector("#single-post");
 const URL = GET_POST_BY_ID_URL;
-console.log(singlePost);
-console.log(GET_POST_BY_ID_URL);
-console.log(postId);
-console.log(token);
 const likeBtn = document.querySelector("#post-likes")
 
 async function getById() {
@@ -21,17 +17,8 @@ async function getById() {
     "Authorization": `Bearer ${token}`
     }}
     )
-    console.log(response);
     const postByIdData = await response.json();
-    console.log(postByIdData);
     const {title, body, created, updated, id, comments, reactions} = postByIdData;
-    console.log(title);
-    console.log(body);
-    console.log(created);
-    console.log(updated);
-    console.log(id);
-    console.log(comments);
-    console.log(reactions);
 
     const whenPostUpdated = postByIdData.updated;
     const theAvatar = postByIdData.author.avatar;
@@ -39,14 +26,10 @@ async function getById() {
     const theAuthor = postByIdData.author.name;
     const titleOfPosts = postByIdData.title;
     const symbol = postByIdData.reactions;
-
-  console.log(symbol);
   
 const reactionData = {
   "count": postByIdData.reactions
 }
-console.log(reactionData);
-
 
 let comment = "";
 let owner = "";
@@ -70,49 +53,6 @@ if (likes === "") {
 else {
     document.getElementById("post-likes").innerHTML = likes;
 }
-/*
-likeBtn.addEventListener("click", function(event){
-const response = await fetch (`${URL}/${postId}/react/<symbol>`,{
-   method: "PUT",
- headers:{ "content-Type": "application/json",
- "Authorization": `Bearer ${token}`
-},
- body: JSON.stringify(reactionData)
-})
- console.log("click")
- console.log(response);
-}
-)*/
-
-// https://nf-api.onrender.com/api/v1/social/posts/${postId}/react/<symbol>
-/*
-likeBtn.addEventListener("click", function(event){
-
-  (async function likePost() {
-    const response = await fetch("https://nf-api.onrender.com/api/v1/social/posts/postId/react", {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}` 
-        },
-        body: JSON.stringify(reactionData)
-    })
-    console.log("post Edition response: ", response)
-    if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        console.log("Edit POST SUCCEEDED!!");
-    } else {
-        const err = await response.json();
-        const message = "Editing post failed";
-        throw new Error(message)
-    }
-})().catch(err => {
-    console.log(err);
-});
-} 
-)*/
-
 
     let time = moment(new Date()); 
     const postCreation = time.diff(whenPostUpdated, 'minutes');
@@ -218,7 +158,7 @@ else {
         <div class="post-content border-white rounded flex flex-col items-center">
         <div class="content-style w-full ">
         <h1 class="text-white  text-center">${titleOfPosts}</h1>
-        <p class="text-red-200 mb-10  text-center">${body}</p>
+        <p class="text-main-text mb-10  text-center">${body}</p>
         <time datetime="2021-01-27T16:35" class="flex mr-10 text-gray-500 ">Updated ${postCreation} min ago
                         </time>
         </div>
@@ -266,9 +206,6 @@ else {
 )}
 
 }
-
-
-
 }
 getById();
 

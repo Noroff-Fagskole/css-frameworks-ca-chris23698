@@ -11,7 +11,9 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script type="module" src="./js/profile.js" defer></script>
   <script type="module" src="/main.js" defer></script>
+  <script src="./js/following.js" defer></script>
 </head>
+
 <body class="bg-primary">
   <header>
     <div class="nav relative z-10 w-full shadow-sm bg-secondary">
@@ -47,28 +49,28 @@
         </div>
         <div class="follow p-2 text-center">
           <div class="followers-count font-bold md:text-2xl">
-            <span>1800</span>
+            <span>0</span>
           </div>
           <div class="followers font-light">
             <span>Followers</span>
           </div>
           <div class="follow-btn">
             <button
-              class="w-20 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+              class="w-20 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white md:text-2xl my-2 hover:bg-hover-btn duration-500">
               FOLLOW
             </button>
           </div>
         </div>
         <div class="following p-2 text-center">
           <div class="following-count font-bold md:text-2xl">
-            <span>38</span>
+            <span>0</span>
           </div>
           <div class="following font-light">
             <span>Following</span>
           </div>
           <div class="Message-btn">
             <button
-              class="w-20 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-secondary rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+              class="w-20 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-secondary rounded text-white md:text-2xl my-2 hover:bg-hover-btn duration-500">
               MESSAGE
             </button>
           </div>
@@ -81,7 +83,7 @@
         <div class="info font-light md:flex md:space-x-6">
           <div class="place">Norway, Oslo</div>
           <div class="job">
-            Front-end Developer - Google
+            Front-end Developer
           </div>
         </div>
       </div>
@@ -188,14 +190,14 @@
           </div>
         </div>
         <button
-          class="h-6 w-12 m-auto text-sm md:text-sm md:w-20 md:h-6 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500">
-          POST
+          class="h-6 w-12 m-auto text-sm md:text-sm md:w-20 md:h-6 bg-main-text rounded text-white md:text-2xl hover:bg-hover-btn duration-500">
+          <span>POST</span>
         </button>
       </div>
     </div>
-    <div class="flex flex-col gap-y-4 justify-start items-center p-8 h-screen posts">
+    <div class="flex flex-col gap-y-4 justify-start items-center h-screen posts p-3 max-w-xl m-auto">
       <div class="container py-6 mx-auto">
-        <ul id="posts-container" role="list" class="divide-y divide-gray-200"></ul>
+        <ul id="posts-container" role="list"></ul>
       </div>
       <div class="posts__notification text-3xl text-yellow-500 capitalize"></div>
     </div>
@@ -226,4 +228,5 @@
     </span>
   </footer>
 </body>
+
 </html>

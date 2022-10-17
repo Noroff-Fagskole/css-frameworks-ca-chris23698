@@ -97,16 +97,16 @@ signUpForm.addEventListener("submit", function (event) {
 
                 const data = await response.json();
                 if (response.ok) {
-                    console.log("success!");
+                    
                 } else {
                     generalErrorMessage.innerHTML = `Sorry :( ${data.message}`
                 }
             } catch (e) {
-                console.log(e);
+                
             }
         })();
 
     } else {
-        console.log("validation failed :(");
+
     }
 });

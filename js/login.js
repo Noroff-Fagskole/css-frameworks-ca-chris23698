@@ -4,28 +4,13 @@ import {saveUser, saveToken} from "./utils/storage";
 
 
 const inlogForm = document.querySelector("#login-content");
-console.log(inlogForm);
-
-const loginBtn = document.getElementById("loginButton-1")
-console.log(loginBtn);
-
-const emailPlace = document.getElementById("email")
-console.log(emailPlace);
-
-const emailError = document.getElementById("mail-error")
-console.log(emailError);
-
-const mailValitation = document.getElementById("email-valitation")
-console.log(mailValitation);
-
-const passwordPlace = document.getElementById("password-input")
-console.log(passwordPlace);
-
-const passwordError = document.getElementById("password-error")
-console.log(passwordError);
-
+const loginBtn = document.getElementById("loginButton-1");
+const emailPlace = document.getElementById("email");
+const emailError = document.getElementById("mail-error");
+const mailValitation = document.getElementById("email-valitation");
+const passwordPlace = document.getElementById("password-input");
+const passwordError = document.getElementById("password-error");
 const generalErrorMessage = document.querySelector("#general-error-message");
-
 
 if (inlogForm) {
 inlogForm.onsubmit = function(event){
@@ -68,13 +53,10 @@ if (passwordPlace.value.trim().length >=6) {
 let ifValidForm = ifEmail && ifEmailValid && ifPassword;
 
 if (ifValidForm) {
-    console.log("The Validation Was A Success")
     const validationData = {
         "email": emailPlace.value,
         "password": passwordPlace.value
     }
-
-
 
 const LOGIN_ENDPOINT = `${USER_LOGIN_URL}`;
 
@@ -86,8 +68,6 @@ const LOGIN_ENDPOINT = `${USER_LOGIN_URL}`;
 });
 if (response.ok) {
     const data = await response.json();
-    console.log(data);
-    console.log(data.accessToken)
     saveToken(data.accessToken);
     const saveTheUser = {
         name: data.name,
@@ -95,19 +75,17 @@ if (response.ok) {
     }
     console.log(saveTheUser);
     saveUser(saveTheUser);
-    console.log("Login Success")
     location.href = "/homepage.html"
 }
 else {
     const tokenValidErr = await response.json();
          const tokenValidErrMessage = `A Validation Error Happened: ${tokenValidErr.message}`;
-               console.log("Login failed");
                
        throw new Error(tokenValidErrMessage);
 }})().catch(tokenValidErr =>{
     generalErrorMessage.innerHTML = `Sorry !! ${tokenValidErr.message}`
 });
 }else {
-    console.log("User Not Found");
+    
 }
 }};

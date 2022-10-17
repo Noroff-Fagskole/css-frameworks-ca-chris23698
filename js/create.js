@@ -25,36 +25,26 @@ if (title.value.trim().length >0){
 }
 else {
 tError.classList.remove("hidden");
-console.log("The Title Is Not Valid Or Missing");
 }
 
 let messageValid = false;
 
 if (message.value.trim().length > 10){
 mError.classList.add("hidden")
-messageValid=true;
-console.log("Message Is Valid")}
+messageValid=true;}
 else {
     mError.classList.remove("hidden")
-    console.log("Message Is Not Valid")
 }
 
 
 let formValid = messageValid && titleValid;
 
 if(formValid){
-    console.log(title.value);
-    console.log(message.value)
     const createdData = {
         "title": title.value,
         "body": message.value,
-      //  "media": media.value
     }
-    console.log(createdData);
     const token = getToken();
-    console.log(token);
-   console.log(URL);
-
 
     (async function makeAPost() {
         const response = await fetch(URL, {
@@ -68,7 +58,6 @@ if(formValid){
 console.log(response)
 if(response.ok) {
     const formData = await response.json();
-    console.log("post created: ", formData);
 location.href = "/homepage.html";
 }
 else {
@@ -77,7 +66,6 @@ else {
 }
 createForm.reset();
     })().catch(generalError => {
-        console.log(generalError)
     });
 }
 else {

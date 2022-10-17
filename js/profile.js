@@ -9,8 +9,11 @@ const accessToken = getToken();
 
 const postsContainer = document.querySelector("#posts-container");
 const postsNotificationMessage = document.querySelector(".posts__notification");
+const name = document.querySelector(".name");
 
-async function getUserPosts() {
+name.innerHTML = `${userName}`;
+
+async function getProfilePosts() {
     const response = await fetch(GET_USER_POSTS_URL, {
         method: "GET",
         headers: {
@@ -44,7 +47,7 @@ async function getUserPosts() {
                         <div class="post-content border-white rounded flex flex-col items-center">
                             <div class="content-style w-full ">
                                 <h1 class="text-white  text-center">${posts[i].title}</h1>
-                                    <p class="text-red-200 mb-10  text-center">${posts[i].body}</p>
+                                    <p class="text-main-text mb-10  text-center">${posts[i].body}</p>
                                         <time datetime="2021-01-27T16:35" class="flex mr-10 text-gray-500 ">Updated ${minutesSinceCreated} min ago </time>
                             </div>
                         </div>
@@ -57,4 +60,4 @@ async function getUserPosts() {
     }
 }
 
-getUserPosts()
+getProfilePosts()
