@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile :: Page</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="./js/profile.js" defer></script>
+  <script type="module" src="/main.js" defer></script>
+  <script src="./js/following.js" defer></script>
+</head>
+
+<body class="bg-primary">
+  <header>
+    <div class="nav relative z-10 w-full shadow-sm bg-secondary">
+      <div class="nav-container w-full bg-secondary fixed top-0 left-0 right-0">
+        <nav
+          class="p-5 bg-secondary w-full shadow md:flex md:items-center md:justify-between w-full max-w-screen-lg px-5 mx-auto">
+          <div class="flex justify-between items-center">
+            <span class="text-4xl text-main-text cursor-pointer">
+              <a href="./homepage.html">NERDS</a>
+            </span>
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white">
+              <ion-icon name="menu" id="menu-btn"></ion-icon>
+            </span>
+          </div>
+          <ul
+            class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-secondary w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-4 my-6 md:my-0">
+              <a href="./index.html" class="text-md text-white"><button
+                  class="bg-main-text p-2 rounded hover:bg-hover-btn duration-500">
+                  SIGN OUT
+                </button></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="profile text-white p-3 max-w-xl items-center m-auto mt-24">
+      <div class="profile-info flex justify-between m-auto">
+        <div class="profile-picture p-2">
+          <img class="rounded-full w-20 h-20" src="./img/pexels-thyrone-paas-1722198.jpg" alt="" />
+        </div>
+        <div class="follow p-2 text-center">
+          <div class="followers-count font-bold md:text-2xl">
+            <span>0</span>
+          </div>
+          <div class="followers font-light">
+            <span>Followers</span>
+          </div>
+          <div class="follow-btn">
+            <button
+              class="w-20 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white md:text-2xl my-2 hover:bg-hover-btn duration-500">
+              FOLLOW
+            </button>
+          </div>
+        </div>
+        <div class="following p-2 text-center">
+          <div class="following-count font-bold md:text-2xl">
+            <span>0</span>
+          </div>
+          <div class="following font-light">
+            <span>Following</span>
+          </div>
+          <div class="Message-btn">
+            <button
+              class="w-20 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-secondary rounded text-white md:text-2xl my-2 hover:bg-hover-btn duration-500">
+              MESSAGE
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="personal-info">
+        <div class="name font-bold">
+          Thomas Kilen
+        </div>
+        <div class="info font-light md:flex md:space-x-6">
+          <div class="place">Norway, Oslo</div>
+          <div class="job">
+            Front-end Developer
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 max-w-lg" />
+    <div class="post-form flex flex-col items-center m-auto p-5">
+      <div id="modal"
+        class="friends cursor-pointer bg-main-text shadow-lg rounded-full w-20 h-20 m-auto items-center grid fixed top-3/4 left-3/4 hover:bg-hover-btn duration-500">
+        <img class="items-center m-auto pb-1" src="./img/friends.png" alt="" />
+      </div>
+      <div class="b bg-black bg-opacity-50 inset-0 hidden justify-center items-center fixed" id="overlay">
+        <div class="bg-grey-200 rounded">
+          <div class="bg-secondary p-10 mx-4 rounded md:max-w-md text-white max-h-3/4">
+            <h1 class="mb-3 text-bold text-2xl">
+              ACTIVE
+            </h1>
+            <div class="friends flex text-center items-center space-x-5">
+              <div class="profile-picture p-2">
+                <img class="rounded-full w-10 h-10" src="./img/pexels-thyrone-paas-1722198.jpg" alt="" />
+              </div>
+              <div class="name text-light">
+                Thomas Kilen
+              </div>
+              <div class="btn">
+                <button
+                  class="px-2 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+                  MESSAGE
+                </button>
+              </div>
+            </div>
+            <div class="friends flex text-center items-center space-x-5">
+              <div class="profile-picture p-2">
+                <img class="rounded-full w-10 h-10" src="./img/pexels-thyrone-paas-1722198.jpg" alt="" />
+              </div>
+              <div class="name text-light">
+                Thomas Kilen
+              </div>
+              <div class="btn">
+                <button
+                  class="px-2 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+                  MESSAGE
+                </button>
+              </div>
+            </div>
+            <div class="friends flex text-center items-center space-x-5">
+              <div class="profile-picture p-2">
+                <img class="rounded-full w-10 h-10" src="./img/pexels-thyrone-paas-1722198.jpg" alt="" />
+              </div>
+              <div class="name text-light">
+                Thomas Kilen
+              </div>
+              <div class="btn">
+                <button
+                  class="px-2 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+                  MESSAGE
+                </button>
+              </div>
+            </div>
+            <div class="friends flex text-center items-center space-x-5">
+              <div class="profile-picture p-2">
+                <img class="rounded-full w-10 h-10" src="./img/pexels-thyrone-paas-1722198.jpg" alt="" />
+              </div>
+              <div class="name text-light">
+                Thomas Kilen
+              </div>
+              <div class="btn">
+                <button
+                  class="px-2 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+                  MESSAGE
+                </button>
+              </div>
+            </div>
+            <div class="friends flex text-center items-center space-x-5">
+              <div class="profile-picture p-2">
+                <img class="rounded-full w-10 h-10" src="./img/pexels-thyrone-paas-1722198.jpg" alt="" />
+              </div>
+              <div class="name text-light">
+                Thomas Kilen
+              </div>
+              <div class="btn">
+                <button
+                  class="px-2 h-6 text-sm md:text-lg md:w-36 md:h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500">
+                  MESSAGE
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-input max-w-2xl">
+        <input class="bg-primary text-white" type="text" placeholder="What do you want to say" />
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 max-w-lg" />
+      <div class="attachment flex space-x-20">
+        <div class="attach flex space-x-5">
+          <div class="video">
+            <img src="./img/video.png" alt="" />
+          </div>
+          <div class="img">
+            <img src="./img/Picture.png" alt="" />
+          </div>
+          <div class="link">
+            <img src="./img/Link.png" alt="" />
+          </div>
+        </div>
+        <button
+          class="h-6 w-12 m-auto text-sm md:text-sm md:w-20 md:h-6 bg-main-text rounded text-white md:text-2xl hover:bg-hover-btn duration-500">
+          <span>POST</span>
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col gap-y-4 justify-start items-center h-screen posts p-3 max-w-xl m-auto">
+      <div class="container py-6 mx-auto">
+        <ul id="posts-container" role="list"></ul>
+      </div>
+      <div class="posts__notification text-3xl text-yellow-500 capitalize"></div>
+    </div>
+  </main>
+  <footer class="p-4 bg-secondary shadow md:px-6 md:py-8 dark:bg-gray-900">
+    <div class="sm:flex sm:items-center sm:justify-between sm:max-w-lg max-w-screen-lg m-auto">
+      <a href="#" class="flex items-center mb-4 sm:mb-0">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap text-main-text">NERDS</span>
+      </a>
+      <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 Christoffer Brendemo. School
+      Project.
+    </span>
+  </footer>
+</body>
+
+</html>

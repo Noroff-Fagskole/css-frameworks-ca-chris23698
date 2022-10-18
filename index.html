@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login :: Page</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./js/signup.js" defer></script>
+  <script type="module" src="./main.js" defer></script>
+  <script type="module" src="./js/login.js" defer></script>
+  <script type="module" src="./js/signup.js" defer></script>
+</head>
+<body class="bg-primary">
+  <header></header>
+  <main class="">
+    <div class="main-container md:h-screen flex m-0 justify-center items-center">
+      <div class="container md:flex md:justify-center m-auto md:max-w-md">
+        <div class="login-container p-4">
+          <h1 class="text-white text-4xl text-center p-3">
+            LOG IN
+          </h1>
+          <form id="login-content" class="login-form text-center max-w-xs flex flex-col justify-center m-auto">
+            <input id="email" class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white" placeholder="Email"
+              type="text" />
+            <p id="mail-error" class="text-lg text-gray-50 hidden">
+              must contain email
+            </p>
+            <p id="email-valitation" class="text-lg text-gray-50 hidden">
+              email is not valid
+            </p>
+            <input id="password-input" class="w-72 h-10 rounded my-2 p-2 bg-input-color text-white"
+              placeholder="Password" type="password" />
+            <p id="password-error" class="text-lg text-gray-50 hidden">
+              Password is required, and must
+              contain 6 characters
+            </p>
+            <a href="">
+              <button id="loginButton-1"
+                class="w-36 h-8 bg-main-text rounded text-white text-2xl my-2 hover:bg-hover-btn duration-500"
+                type="submit">
+                LOG IN
+              </button></a>
+          </form>
+        </div>
+        <hr class="border-gray-200 my-auto dark:border-gray-700 mx-8" />
+        <div class="signup-container p-4">
+          <h1 class="text-4xl text-center p-3 text-white">
+            SIGN UP
+          </h1>
+          <form action="" id="signup-form" class="signup-form text-center max-w-xs flex flex-col justify-center m-auto">
+            <input id="first-name" class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white" placeholder="First name"
+              type="text" />
+            <span id="first-name-error" class="hidden text-sm text-red-500">
+              Please enter your first name</span>
+            <input id="email" class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white" placeholder="Email"
+              type="text" />
+            <span id="email-not-valid" class="hidden text-sm text-red-500">
+              Email is not valid must be a valid
+              stud.noroff.no or noroff.no email
+              address
+            </span>
+            <span id="email-error" class="hidden text-sm text-red-500">
+              Email is required
+            </span>
+            <input id="password" class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white" placeholder="Password"
+              type="password" />
+            <span id="password-error" class="hidden text-sm text-red-500">
+              Password must be over 6 characters
+            </span>
+            <input id="confirm-password" class="w-72 h-10 mb-3 rounded p-2 bg-input-color text-white"
+              placeholder="Confirm Password" type="password" />
+            <span id="confirm-password-matching" class="hidden text-sm text-red-500">
+              Passwords doesn't match
+            </span>
+            <span id="confirm-password-error" class="hidden text-sm text-red-500">
+              Password must be over 6 characters
+            </span>
+            <a href="./homepage.html"><button
+                class="w-36 h-8 bg-main-text rounded text-white text-2xl hover:bg-hover-btn duration-500">
+                SIGN IN
+              </button></a>
+          </form>
+          <p id="general-error-message" class="capitalize text-3xl text-yellow-500"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="p-4 bg-secondary shadow md:px-6 md:py-8 dark:bg-gray-900">
+    <div class="sm:flex sm:items-center sm:justify-between sm:max-w-lg max-w-screen-lg m-auto">
+      <a href="#" class="flex items-center mb-4 sm:mb-0">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap text-main-text">NERDS</span>
+      </a>
+      <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 Christoffer Brendemo & Snorre
+      Kolnes Røgenes. School Project.
+    </span>
+  </footer>
+</body>
+</html>
